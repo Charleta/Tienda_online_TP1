@@ -57,16 +57,22 @@ button:hover{
 
 
 <div class="container">
-    <header>
-        <h1>Bienvenido a nuestra Tienda Virtual</h1>
-    </header>
-<div>
-    <p>Somos una tienda que estamos innovando en traer productos que nuestros jugadores gamers necesita, a continuacion te mostraremos lo que tenemos. Proximamente
-    tendremos muchos mas.</p>
-    <img src="img/img_home.webp" class="img-fluid" alt="imagen de portada">
-            <div class="contenedor_boton">
-                <button><a href="index.php?seccion=product" class="boton">Ver Productos</button>
-            </div>
-</div>
+            <header>
+                <h1>Bienvenido a nuestra Tienda Virtual</h1>
+            </header>
+    <div>
+
+
+            <p>Somos una tienda que estamos innovando en traer productos que nuestros jugadores gamers necesita, a continuacion te mostraremos lo que tenemos. Proximamente
+            tendremos muchos mas.</p>
+
+        <img src="img/img_home.webp" class="img-fluid" alt="imagen de portada">
+
+                <div class="contenedor_boton">
+
+                    <button><a href="index.php?seccion=product" class="boton">Ver Productos</button></a>
+
+                </div>
+    </div>
 
 </div>
