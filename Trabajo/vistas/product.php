@@ -1,22 +1,24 @@
 <?php
 
-//include ('libs/obtenerProductos.php');
-
-require_once ('objetos_PDO/conection.php');
-require_once ('objetos_PDO/producto.php');
-
-$ObjConection = new conection();
-$conection = $ObjConection->getConection() ();
-$query = "SELECT * FROM productos";
-$PDO = $conection->prepare($query);
-$PDO->setFetchMode(PDO::FETCH_CLASS, "producto");
-$PDO->execute();
+use classes\Producto;
 
 
-$productos = $PDO->fetchAll();
 
-print_r($productos);
+require_once '../classes/producto.php';
+require_once '../classes/connection.php';
+
+
+$miProductoS = new Producto();
+$producto = $miProductoS->getAll();
+
+
+
+
 ?>
+
+
+
+
 <style>
 
     main {
@@ -98,26 +100,26 @@ print_r($productos);
 <h2>Todos los productos</h2>
 </header>
 
-<!--<div class="contenedor_cards">-->
-<!--            --><?php
-//            $productos = obtenerProductos(); // Suponiendo que tienes una función que devuelve los productos
-//
-//            foreach ($productos as $producto) {
-//                ?>
-<!--                <div class="card">-->
-<!--                    <img src="--><?php //echo $producto['imagen']; ?><!--" alt="--><?php //echo $producto['nombre']; ?><!--">-->
-<!--                    <h2>--><?php //echo $producto['nombre']; ?><!--</h2>-->
-<!--                    <p>--><?php //echo $producto['descripcion']; ?><!--</p>-->
-<!--                    <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px">--><?php //echo $producto['precio']; ?><!--</p>-->
-<!--                    <div class="boton_detalles">-->
+<div class="contenedor_cards">
+            <?php
+
+
+            foreach ($producto as $item) {
+                ?>
+                <div class="card">
+                    <img src="<?php echo $item->getImagen(); ?>" alt="<?php echo $item->getNombre(); ?>">
+                    <h2><?php echo $item->getNombre(); ?></h2>
+                    <p><?php echo $item->getDescripcion(); ?></p>
+                    <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px"><?php echo $item->getPrecio(); ?></p>
+                    <div class="boton_detalles">
 <!--                        <a href="index.php?seccion=detalles&id=--><?php //= $producto['id']?><!-- ">Detalles</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                --><?php
-//            }?>
-<!--        </div>-->
-<!---->
-<!--</div>-->
+                    </div>
+                </div>
+                <?php
+            }?>
+        </div>
+
+</div>
 
 
 </main>

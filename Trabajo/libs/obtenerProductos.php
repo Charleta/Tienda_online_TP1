@@ -6,7 +6,8 @@ function obtenerProductos() {
     $data = json_decode($content, true); //object
 
 
-    return $data['productos'];}
+    return $data['productos'];
+}
 
 
 function filtrarPorCategoria ($productos, $categoria) {
