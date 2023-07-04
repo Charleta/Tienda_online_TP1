@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,13 +21,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="index.php?seccion=producto&method=add">Agregar producto</a>
+                    <a class="nav-link active" href="index.php?seccion=producto&method=añadir">Agregar Artista</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?seccion=artista&method=update">Actualizar Artista</a>
+                    <a class="nav-link" href="index.php?seccion=producto&method=actualizar">Actualizar Artista</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php?seccion=artista&method=remove">Eliminar Artista</a>
+                    <a class="nav-link" href="index.php?seccion=producto&method=baja">Eliminar Artista</a>
                 </li>
 
             </ul>
