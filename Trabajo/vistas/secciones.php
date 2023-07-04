@@ -30,20 +30,24 @@ function filtrarPorCategoria($productos, $categoria) {
     return $productos_filtrados;
     print_r($productos_filtrados);
 
-};
+}
 
 
-print_r('hola');
 ?>
 <style>
 
     main {
-        padding: 20px 50px;
+        padding: 20px 40px;
         max-width: 1300px;
         width: 100%;
         margin: auto;
     }
-
+    .contenedor_menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
     .breadcumbs {
         font-size: 14px;
         margin-bottom: 10px;
@@ -62,10 +66,10 @@ print_r('hola');
 
     ul li a {
         text-decoration: none;
-        color: #3E398F;
+        color: #2c0f0f;
         font-weight: bold;
-        font-size: 25px;
-        text-decoration: underline;
+        font-size: 20px;
+        ;
     }
     h2 {
         margin-left: 25px;
@@ -78,7 +82,7 @@ print_r('hola');
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 20px;
-        height: 380px;
+        height: 400px;
         vertical-align: top;
         background-color: white;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -108,7 +112,20 @@ print_r('hola');
         text-align: center;
     }
     .contenedor_cards{
+    display: grid ;
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas con ancho igual */
+        grid-gap: 20px;
+    }
+    @media (max-width: 980px) {
+        .contenedor_cards {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 
+    @media (max-width: 450px) {
+        .contenedor_cards {
+            grid-template-columns: 1fr;
+        }
     }
     .boton_detalles {
         align-items: center;
@@ -133,18 +150,20 @@ print_r('hola');
 <main>
 
 <header>
-    <p class="breadcumbs"><a href="index.php">Inicio</a> > secciones</p>
+
+    <div class="contenedor_menu">
+    <p class="breadcumbs"><a href="index.php">Inicio</a> ><a href="index.php?seccion=product">productos</a> > secciones</p>
 
     <ul>
         <li><a href="index.php?seccion=secciones&categoria=ram">Memoria Ram</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=microprocesador">Microprocesador</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=discos">Discos</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=motherboard">Motherboard</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=monitor">Monitor</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=mouse">Mouse</a></li>
+        <li><a href="index.php?seccion=secciones&categoria=microprocesador">| Microprocesador</a></li>
+        <li><a href="index.php?seccion=secciones&categoria=discos">| Discos</a></li>
+        <li><a href="index.php?seccion=secciones&categoria=motherboard">| Motherboard</a></li>
+        <li><a href="index.php?seccion=secciones&categoria=monitor">| Monitor</a></li>
+        <li><a href="index.php?seccion=secciones&categoria=mouse">| Mouse</a></li>
     </ul>
 
-
+    </div>
 
 <header>
 

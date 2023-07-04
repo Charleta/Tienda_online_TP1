@@ -1,9 +1,23 @@
 <style>
 main {
-    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 30px;
+}
+.contacto{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+header {
+    margin-right: 5%;
 }
 header p {
     font-size: 20px;
+
 }
 .contacto_h1{
 
@@ -44,10 +58,11 @@ margin-top: 0;
 }
 </style>
 <main>
+    <div class="contacto">
         <header>
         <p>¿Necesitas algo especial?</p>
         <h1 class="contacto_h1">Contáctanos</h1>
-        <header>
+        </header>
 
             <div class="cuadro_contacto">
 
@@ -77,4 +92,5 @@ margin-top: 0;
             </form>
 
             </div>
+    </div>
 </main>

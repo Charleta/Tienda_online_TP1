@@ -1,31 +1,32 @@
 <style>
 
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+
+h1{
+    text-align: center;
+    font-size: 50px;
+}
+    .cuerpo {
+        width: 800px;
+        font-size:18px ;
     }
 
-    .container img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px; /* Espacio opcional entre la imagen y el título */
-    }
-    .container h1 {
-        font-size: 45px;
-        margin-bottom: 5px; /* Espacio opcional entre el título y el párrafo */
-    }
-    .container p {
-        font-size: 25px;
+    .parrafo_centrado {
+        font-weight: bold;
+        margin: 0;
         text-align: center;
     }
+
     .contenedor_boton {
 
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    img {
+        width: 800%;
+        height: 100%;
+        margin-top: 5%;
     }
     button {
         width: 250px;
@@ -35,6 +36,8 @@
         color: white;
         border-radius: 20px;
         transition: transform 0.2s;
+        margin-top: 5%;
+        margin-bottom: 5%;
     }
 button:hover{
     background-color: white;
@@ -56,23 +59,26 @@ button:hover{
 </style>
 
 
-<div class="container">
-            <header>
-                <h1>Bienvenido a nuestra Tienda Virtual</h1>
-            </header>
-    <div>
+    <div class="container-fluid mt-4 cuerpo">
 
-
-            <p>Somos una tienda que estamos innovando en traer productos que nuestros jugadores gamers necesita, a continuacion te mostraremos lo que tenemos. Proximamente
-            tendremos muchos mas.</p>
-
-        <img src="img/img_home.webp" class="img-fluid" alt="imagen de portada">
-
-                <div class="contenedor_boton">
-
-                    <button><a href="index.php?seccion=product" class="boton">Ver Productos</button></a>
-
-                </div>
+                <h1>Bienvenido a Tec-Mundo</h1>
     </div>
 
-</div>
+        <div class="container-fluid cuerpo">
+            <p>Somos una tienda que estamos innovando en traer productos que nuestros jugadores gamers necesita, a continuacion te mostraremos lo que tenemos.</p>
+        </div>
+         <div class="parrafo_centrado">
+            <p>Proximamente tendremos muchos mas.</p>
+        </div>
+
+
+            <img src="img/img_home.webp" class="img-fluid" alt="imagen de portada">
+
+
+
+                    <div class="contenedor_boton">
+
+                        <button><a href="index.php?seccion=product" class="boton">Ver Productos</button></a>
+
+                    </div>
+

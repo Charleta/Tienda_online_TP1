@@ -1,19 +1,45 @@
-<?php
+<style>
+    .header {
+        color: #36A0FF;
+        font-size: 27px;
+        padding: 10px;
+    }
+    .row{
+        padding-left: 200px;
+    }
 
-?>
+</style>
 
-<div class="row">
-    <div class="col-12">
-        <h1 class="text-center my-5">Agregar Producto</h1>
-        <form class="row" action="actions/baja_producto_accion.php" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="id" class="form-label">baja producto</label>
-                <input class="form-control" id="id" name="id" placeholder="">
+<legend class="text-center header">Sacar producto</legend>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form class="form-horizontal" action="actions/agregar_Producto_accion.php" method="post" enctype="multipart/form-data">
+                    <fieldset>
+
+
+                        <div class="form-group">
+                            <label for="id" class="col-md-1 col-md-offset-2 text-center">id producto</label>
+                            <div class="col-md-8">
+                                <input class="form-control" id="id" name="id"  type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 text-center mt-4 mb-4">
+                                <button type="submit" class="btn btn-success btn-lg ">Sacar Producto</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary">Agregar Producto</button>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
+
+
+
+
+

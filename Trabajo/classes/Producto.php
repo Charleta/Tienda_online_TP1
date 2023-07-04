@@ -108,12 +108,12 @@ class Producto {
     }
     public function baja($id) {
         $conexion = (new Connection())->getConection();
-        $query = "UPDATE productos SET baja = 1 WHERE id = :id";
+        $query = "UPDATE productos SET baja = :baja WHERE id = :id";
         $stmt = $conexion->prepare($query);
         $stmt->execute(
             [
                 'id' => $id,
-                'baja' => $baja,
+                'baja' => 1,
             ]
         ) ;
         $stmt->setFetchMode(PDO::FETCH_CLASS, self::class);

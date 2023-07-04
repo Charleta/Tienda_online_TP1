@@ -1,26 +1,13 @@
 
-<style>
-    footer {
-        font-size: 25px;
-        background-color: #1e0707;
-        height: 100px;
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        margin-top: 10%;
-        color: white;
 
-    }
+<footer class="bg-light text-center text-lg-start ">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color:#223026;">
 
-</style>
+        <p class="text-light fs-5">Carlos Ortega || Programacion II </p>
+    </div>
 
-
-
-<footer>
-    <p>Carlos Ortega - Programacion</p>
 </footer>
-
 </body>
 </html>
 

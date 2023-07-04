@@ -10,22 +10,16 @@
 
 </style>
 
-<legend class="text-center header">Actualizar Producto</legend>
+<legend class="text-center header">AgregarProducto</legend>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" action="actions/actualizar_Producto_Accion.php" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="actions/agregar_Producto_accion.php" method="post" enctype="multipart/form-data">
                     <fieldset>
 
 
-                        <div class="form-group">
-                            <label for="id" class="col-md-1 col-md-offset-2 text-center">id</label>
-                            <div class="col-md-8">
-                            <input class="form-control" id="id" name="id"  type="text">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label for="nombre" class="col-md-1 col-md-offset-2 text-center">nombre</label>
                             <div class="col-md-8">
@@ -65,7 +59,7 @@
 
                         <div class="form-group">
                             <div class="col-md-12 text-center mt-4 mb-4">
-                                <button type="submit" class="btn btn-success btn-lg ">actualizar Producto</button>
+                                <button type="submit" class="btn btn-success btn-lg ">Agregar Producto</button>
                             </div>
                         </div>
                     </fieldset>
@@ -74,5 +68,6 @@
         </div>
     </div>
 </div>
+
 
 

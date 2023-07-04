@@ -5,20 +5,19 @@ require_once "../../classes/Connection.php";
 
 $postData = $_POST;
 
-try {
 
+
+try {
     $productos = (new \classes\Producto());
-    $productos->actualizar(
-        $postData['id'],
+    $productos->addProducto(
         $postData['nombre'],
-        $postData['descripcion'],
         $postData['precio'],
+        $postData['descripcion'],
         $postData['imagen'],
         $postData['categoria'],
         $postData['garantia'],
         $postData['color']
     );
-
 }catch (Exception $e) {
     echo $e->getMessage();
 }
