@@ -2,50 +2,49 @@
 
 namespace classes;
 
+require_once "Connection.php";
 use PDO;
 
 class Usuario
 {
     protected $id;
-    protected $email;
+    protected $username;
     protected $password;
 
 
 
-    /**
-     * @return mixed
-     */
     public function getId()
     {
         return $this->id;
     }
-    public function setId($id):void{
+    public function setId($id){
         $this->id=$id;
     }
-    public function getEmail()
+  public function getUsername()
     {
-        return $this->email;
+        return $this->username;
     }
-    public function setEmail($email):void{
-        $this->email=$email;
+
+    public function setUsername($username){
+        $this->username=$username;
     }
     public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPassword($password):void{
+    public function setPassword($password){
         $this->password=$password;
     }
 
-    public function getUsuarioDelMail($email){
+    public function getUserByUsername($username){
         $conexion = (new Connection())->getConection();
-        $query = "SELECT * FROM usuario WHERE email = :email";
+        $query = "SELECT * FROM usuario WHERE usuario = :username";
         $stmt = $conexion->prepare($query);
         $stmt->setFetchMode(PDO::FETCH_CLASS, self::class);
         $stmt->execute(
             [
-                'email' => $email
+                'username' => $username
             ]
         );
         $result = $stmt->fetch();
@@ -53,4 +52,5 @@ class Usuario
             return null;
         return $result;
     }
-}
+    }
+

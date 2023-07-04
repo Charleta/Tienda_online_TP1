@@ -1,15 +1,23 @@
 <?php
 
+session_start();
+
 require_once "../../classes/Autenticacion.php";
 require_once "../../classes/Connection.php";
 require_once "../../classes/Usuario.php";
 
 $postData = $_POST;
 
-$login = ((new \classes\Autenticacion())->logIn($postData["email"], $postData["password"]));
+$login = ((new \classes\Autenticacion())->logIn($postData["username"], $postData["password"]));
 
-if($login) {
-    header('location: ../index.php?seccion=producto&method=agregar');
+
+if($login){
+    $_SESSION["username"] = $postData["email"];
+    $_SESSION["password"] = $postData["password"];
+    header ("Location: ../index.php?seccion=agregar_producto");
+    exit();
 } else {
-    header('location: ../index.php?seccion=login');
+    header ("Location: ../index.php?seccion=login&error=Usuario o contraseña incorrectos");
+    exit();
 }
+

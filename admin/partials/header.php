@@ -19,7 +19,7 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
-
+                <?php if(isset($_SESSION['username']))  {?>
                 <li class="nav-item">
                     <a class="nav-link active lt" href="index.php?seccion=agregar">Agregar Artista</a>
                 </li>
@@ -29,7 +29,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=baja">| Eliminar Artista</a>
                 </li>
-
+                <?php } else { ?>
+                    <li  class="nav-item"><a href="../index.php?seccion=home">Regresar al incio</a></li>
+                <?php } ?>
             </ul>
         </div>
     </div>

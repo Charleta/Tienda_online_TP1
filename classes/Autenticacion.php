@@ -2,27 +2,30 @@
 
 namespace classes;
 
+require_once "Usuario.php";
+require_once "Connection.php";
 
 class Autenticacion
+
 {
+    public function logIn(string $username, string $password) {
+        try{
+            $miUser = (new Usuario());
+            $user = $miUser->getUserByUsername($email);
+            // $usuer = (new Usuario())->getUserByUsername($username);
 
-    public function logIn(string $email, string $password) {
-
-        try {
-            $user = (new \classes\Usuario())->getUsuarioDelMail($email);
-            if (!$user) return false;
+            if(!$user) return false;
             $loggedIn = ($user->getPassword() == $password);
             $_SESSION["loggedIn"] = $loggedIn;
             return $loggedIn;
-        } catch (Exception $e) {
-            echo e->getMessage();
+
+        } catch (Exception $e){
+            echo $e->getMessage();
         }
-        return false;
     }
 
-    public function checkLogin() {
-
-        return true;//isset($_SESSION["loggedIn"]);
+    public function checklogin(){
+        return true;
     }
-
 }
+

@@ -29,14 +29,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=secciones">Secciones</a>
                 </li>
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="index.php?seccion=carrito">Carrito</a>-->
-<!--                </li>-->
+
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=contactos">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php?seccion=alumno">Datos alumno</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="admin">admin</a>
                 </li>
             </ul>
         </div>

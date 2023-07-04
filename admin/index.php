@@ -1,10 +1,18 @@
 <?php
 
+session_start();
+
 require_once "../classes/Autenticacion.php";
 
+if(isset($_SESSION["username"]) && isset($_SESSION["password"])){
+    $vista = $_GET["seccion"];
+} else {
+    $vista = "login";
+}
 
-
-require "./partials/header.php"; ?>
+$vista = $vista ? $vista : 'login';
+print_r($vista);
+require "partials/header.php"; ?>
 
 <style>
     .titulo {
@@ -25,7 +33,9 @@ require "./partials/header.php"; ?>
 <p>Esta es la página de inicio del admin de la tienda</p>
 </div>
 </div>
-<?php include "views/login.php" ?>
+<?php include "views/$vista.php";   ?>
+
+
 <?php
 require_once "../secciones/footer.php";
 ?>
