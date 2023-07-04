@@ -1,28 +1,40 @@
 <?php
 
-require_once ('libs/obtenerProductos.php');
-
-$categoriaSolicitada =  $_GET['categoria'];
-$categoriaSolicitada = $categoriaSolicitada ? $categoriaSolicitada : 'todos';
+use classes\Producto;
 
 
-$productos = obtenerProductos();
+require_once 'classes/Connection.php';
+require_once 'classes/Producto.php';
 
-if ($categoriaSolicitada == 'todos'){
-    $categoria = $productos;
-    $titulo = 'Selecciona una categoría para filtrar';
-    $subtitulo = 'Mostrando todos los productos';
+
+
+$miProducto = new Producto();
+$productos = $miProducto->getAll();
+
+$cate = isset($_GET['categoria']) ? $_GET['categoria'] : '';
+$categoria = [];
+
+if (!empty($cate)) {
+    $categoria = filtrarPorCategoria($productos, $cate);
 } else {
-    $categoria = filtrarPorCategoria($productos, $categoriaSolicitada);
-    $cantidadencontrada = count($categoria);
-    $titulo = 'Libros de ' . $categoriaSolicitada;
-    $subtitulo = $cantidadencontrada . ' resultados encontrados';
+    $categoria = $productos;
+}
+
+function filtrarPorCategoria($productos, $categoria) {
+    $productos_filtrados = [];
+    foreach ($productos as $pr) {
+        if ($pr -> getCategoria()== $categoria) {
+            $productos_filtrados[] = $pr;
+        }
+    }
+    return $productos_filtrados;
+    print_r($productos_filtrados);
+
 };
 
 
-
+print_r('hola');
 ?>
-
 <style>
 
     main {
@@ -132,23 +144,23 @@ if ($categoriaSolicitada == 'todos'){
         <li><a href="index.php?seccion=secciones&categoria=mouse">Mouse</a></li>
     </ul>
 
-    <h1><?= $titulo ?></h1>
-    <p><?= $subtitulo ?></p>
+
+
 <header>
 
 
     <div class="contenedor_cards">
         <?php
 
-        foreach ($categoria as $producto) {
+        foreach ($categoria as $item) {
             ?>
             <div class="card">
-                <img src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
-                <h2><?php echo $producto['nombre']; ?></h2>
-                <p><?php echo $producto['descripcion']; ?></p>
-                <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px"><?php echo $producto['precio']; ?></p>
+                <img src="<?php echo $item->getImagen(); ?>" alt="<?php echo $item->getNombre(); ?>">
+                <h2><?php echo $item->getNombre(); ?></h2>
+                <p><?php echo $item->getDescripcion();?></p>
+                <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px">$<?php echo $item->getPrecioFormateado(); ?></p>
                 <div class="boton_detalles">
-                    <a href="index.php?seccion=detalles&id=<?= $producto['id']?> ">Detalles</a>
+                    <a href="index.php?seccion=detalles&id=<?= $item->getId();?> ">Detalles</a>
                 </div>
             </div>
             <?php

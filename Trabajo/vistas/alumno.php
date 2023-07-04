@@ -61,16 +61,30 @@
 
 <main>
 
+    <?php
+    use classes\Alumno;
+    require_once 'classes/Alumno.php';
+
+    $miAlumno = new Alumno();
+    $alumno= $miAlumno->getAll();
+
+
+    foreach ($alumno as $item){?>
+
+
+
 <div class="base_tarjeta">
     <div class="card">
-        <img src="img/carlos_ortega.jpg" alt="carlos Ortega" >
-        <h1>Carlos Ortega</h1>
+        <img src="<?php echo $item->getImagen();?>" alt="carlos Ortega" >
+        <h1><?php echo $item->getNombre().' '.$item->getApellido();?></h1>
         <p>Programador Web</p>
         <ul class="contact">
-            <li> Edad : 28 años</li>
-            <li> Correo Electrónico : sr.carlosortega@gmail.com</li>
-            <li> instagram : Carlos.ortegaok</li>
+            <li> Edad : <?php echo $item->getEdad()?></li>
+            <li> Correo Electrónico : <?php echo $item->getCorreo()?></li>
+            <li> instagram : <?php echo $item->getRedesSociales()?></li>
         </ul>
     </div>
 </div>
 </main>
+    <?php
+    }?>

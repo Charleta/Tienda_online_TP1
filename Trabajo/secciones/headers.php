@@ -15,6 +15,10 @@
     <div class="barraMenu">
 
         <ul class="menu">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.php?seccion=login"><i class="bi bi-person-fill" style="font-size:x-large;
+	margin-right: auto;"></i></a>
+            </li>
             <li><a href="index.php?seccion=home">Inicio</a></li>
             <li><a href="index.php?seccion=product">Productos</a></li>
             <li><a href="index.php?seccion=secciones">Secciones</a></li>

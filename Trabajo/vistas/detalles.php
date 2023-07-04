@@ -1,12 +1,28 @@
 <?php
 
-    $id=$_GET['id'];
+use classes\Producto;
 
-include_once ('libs/obtenerProductos.php');
+$id = isset($_GET['id']) ? $_GET['id'] : 0;
 
-$productos = obtenerProductos();
-$producto=$productos[$id];
+require_once 'classes/Producto.php';
+
+$miProducto = new Producto();
+$productos = $miProducto -> getAll();
+
+function filtrarPorId($productos, $id) {
+    $detalles = [];
+    foreach ($productos as $pr) {
+        if ($pr->getId() == $id) {
+            $detalles[] = $pr;
+        }
+    }
+    return $detalles;
+}
+$detalles = filtrarPorId($productos, $id);
+
+print_r($detalles)
 ?>
+
 <style>
 
 
@@ -83,25 +99,30 @@ main{
 
 
 <main>
+   <?php ;foreach ($detalles as $item) {
 
-    <p class="breadcumbs"><a href="index.php?seccion=home">Inicio</a> > <a href="index.php?seccion=books">Libros</a> > <?= $producto['nombre'] ?></p>
+    ?>
+    <p class="breadcumbs"><a href="index.php?seccion=home">Inicio</a> > <a href="index.php?seccion=product">Categoria</a> > <?= $item->getNombre() ?></p>
+
+
+
 
     <div class="detalles">
-        <img src="<?= $producto['imagen'] ?>" alt="Portada del libro <?= $producto['nombre'] ?>">
+        <img src="<?= $item->getImagen() ?>" alt="Portada del libro <?= $item->getNombre() ?>">
         <div>
             <div>
-                <h1><?= $producto['nombre'] ?></h1>
-                <p><span>Color:</span> <?= $producto['color'] ?></p>
-                <p>$<?= $producto['precio'] ?> USD</p>
+                <h1><?= $item->getNombre() ?></h1>
+                <p><span>Color:</span> <?= $item->getColor() ?></p>
+                <p>$<?= $item->getPrecioFormateado()?> </p>
                 <button>Agregar al carrito</button>
             </div>
 
 
-            <p><?= $producto['descripcion'] ?></p>
+            <p><?= $item->getDescripcion() ?></p>
 
             <h2>Garantia</h2>
             <ul>
-                <li> <?= $producto['garantia'] ?></li>
+                <li> <?= $item->getGarantia() ?></li>
 
             </ul>
 
@@ -109,4 +130,6 @@ main{
     </div>
 
 
-</main>
+</main><?php
+}
+?>

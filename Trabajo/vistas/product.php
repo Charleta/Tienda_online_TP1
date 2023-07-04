@@ -1,15 +1,16 @@
 <?php
 
 use classes\Producto;
-
-
-
-require_once '../classes/producto.php';
-require_once '../classes/Connection.php';
+require_once 'classes/Connection.php';
+require_once 'classes/Producto.php';
 
 
 $miProductoS = new Producto();
 $producto = $miProductoS->getAll();
+
+
+
+
 
 
 
@@ -110,9 +111,9 @@ $producto = $miProductoS->getAll();
                     <img src="<?php echo $item->getImagen(); ?>" alt="<?php echo $item->getNombre(); ?>">
                     <h2><?php echo $item->getNombre(); ?></h2>
                     <p><?php echo $item->getDescripcion(); ?></p>
-                    <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px"><?php echo $item->getPrecio(); ?></p>
+                    <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px">$<?php echo $item->getPrecioFormateado(); ?></p>
                     <div class="boton_detalles">
-<!--                        <a href="index.php?seccion=detalles&id=--><?php //= $producto['id']?><!-- ">Detalles</a>-->
+                        <a href="index.php?seccion=detalles&id=<?= $item->getId()?> ">Detalles</a>
                     </div>
                 </div>
                 <?php
