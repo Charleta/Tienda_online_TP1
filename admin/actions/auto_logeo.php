@@ -8,11 +8,13 @@ require_once "../../classes/Usuario.php";
 
 $postData = $_POST;
 
-$login = ((new \classes\Autenticacion())->logIn($postData["username"], $postData["password"]));
+
+$login = (new \classes\Autenticacion())->logIn($postData["username"], $postData["password"]);
+
 
 
 if($login){
-    $_SESSION["username"] = $postData["email"];
+    $_SESSION["username"] = $postData["username"];
     $_SESSION["password"] = $postData["password"];
     header ("Location: ../index.php?seccion=agregar_producto");
     exit();

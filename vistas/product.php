@@ -23,17 +23,18 @@ $producto = $miProductoS->getAll();
         margin: auto;
     }
 
-.titulo_h2{
-    text-align: center;
-}
+    .titulo_h2{
+        text-align: center;
+        margin-top: 3%;
+    }
 
 
-div h2 {
-    margin-left: 25px;
-    font-size: 55px;
-    font-weight: bold;
-    color: #3f1515;
-}
+    div h2 {
+        margin-left: 25px;
+        font-size: 55px;
+        font-weight: bold;
+        color: white;
+    }
     .card {
         display: inline-block;
         width: 300px;
@@ -41,10 +42,10 @@ div h2 {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 20px;
-        height: 400px;
+        height: 420px;
         vertical-align: top;
         background-color: white;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        box-shadow: rgba(148, 181, 234, 0.56) 0px 22px 70px 4px;
 
     }
 
@@ -69,6 +70,7 @@ div h2 {
         margin: 5px 0;
         font-size: 14px;
         text-align: center;
+        color: #0A2647 ;
     }
     .contenedor_cards{
         display: grid ;
@@ -96,11 +98,12 @@ div h2 {
         width: 200px;
         border-radius: 20px;
         height: 35px;
-        background-color: #3f1515;
+        background-color: #0A2647;
         text-align: center;
         font-size: 20px;
         text-decoration: none;
         color: white;
+        margin-top: 1%;
 
     }
 
@@ -108,34 +111,34 @@ div h2 {
 
 <main>
 
-<header>
-<div class="titulo_h2">
-<h2>Todos nuestros productos</h2>
-</div>
-    <p>Conoce algunos de nuestros productos que estamos trayendo al mercado..</p>
-    <p class="breadcumbs"><a href="index.php?seccion=home">Inicio</a> > <a href="index.php?seccion=product">Productos</a> </p>
-</header>
+    <header>
+        <div class="titulo_h2">
+            <h2>Todos nuestros productos</h2>
+        </div>
+        <p>Conoce algunos de nuestros productos que estamos trayendo al mercado..</p>
+        <p class="breadcumbs"><a href="index.php?seccion=home">Inicio</a> > <a href="index.php?seccion=product">Productos</a> </p>
+    </header>
 
-<div class="contenedor_cards">
-            <?php
+    <div class="contenedor_cards">
+        <?php
 
 
-            foreach ($producto as $item) {
-                ?>
-                <div class="card">
-                    <img src="<?php echo $item->getImagen(); ?>" alt="<?php echo $item->getNombre(); ?>">
-                    <h2><?php echo $item->getNombre(); ?></h2>
-                    <p><?php echo $item->getDescripcion(); ?></p>
-                    <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px">$<?php echo $item->getPrecioFormateado(); ?></p>
-                    <div class="boton_detalles">
-                        <a href="index.php?seccion=detalles&id=<?= $item->getId()?> ">Detalles</a>
-                    </div>
+        foreach ($producto as $item) {
+            ?>
+            <div class="card">
+                <img src="<?php echo $item->getImagen(); ?>" alt="<?php echo $item->getNombre(); ?>">
+                <h2><?php echo $item->getNombre(); ?></h2>
+                <p><?php echo $item->getDescripcion(); ?></p>
+                <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px">$<?php echo $item->getPrecioFormateado(); ?></p>
+                <div class="boton_detalles">
+                    <a href="index.php?seccion=detalles&id=<?= $item->getId()?> ">Detalles</a>
                 </div>
-                <?php
-            }?>
+            </div>
+            <?php
+        }?>
 
 
-</div>
+    </div>
 
 
 </main>

@@ -1,7 +1,12 @@
 
 <?php
-    $vista = $_GET['seccion'];
-    $vista = $vista ? $vista : 'home'; ?>
+session_start();
+
+session_unset();
+session_destroy();
+
+$vista = $_GET['seccion'];
+$vista = $vista ? $vista : 'home'; ?>
 
 <?php include('secciones/headers.php') ?>
 

@@ -1,70 +1,70 @@
 <style>
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    margin-top: 30px;
-}
-.contacto{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-    padding: 20px;
-}
-header {
-    margin-right: 5%;
-}
-header p {
-    font-size: 20px;
+        margin-top: 30px;
+    }
+    .contacto{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        padding: 20px;
+    }
+    header {
+        margin-right: 5%;
+    }
+    header p {
+        font-size: 20px;
 
-}
-.contacto_h1{
+    }
+    .contacto_h1{
 
-margin-top: 0;
-    color: #3E398F;
-    font-size: 50px;
-}
-.cuadro_contacto {
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 30px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-    border-radius: 5px;
-}
+        margin-top: 0;
+        color: white;
+        font-size: 50px;
+    }
+    .cuadro_contacto {
+        max-width: 450px;
+        margin: 0 auto;
+        padding: 30px;
+        box-shadow: rgba(148, 181, 234, 0.56) 0px 22px 50px 4px;
+        border-radius: 20px;
+    }
 
-.cuadro_contacto div input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    .cuadro_contacto div input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
 
-}
-.cuadro_contacto textarea {
-    resize: vertical;
-    height: 100px;
-    width: 100%;
-}
-.cuadro_contacto button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #08192b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    }
+    .cuadro_contacto textarea {
+        resize: vertical;
+        height: 100px;
+        width: 100%;
+    }
+    .cuadro_contacto button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #2E93FF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 </style>
 <main>
     <div class="contacto">
         <header>
-        <p>¿Necesitas algo especial?</p>
-        <h1 class="contacto_h1">Contáctanos</h1>
+            <p>¿Necesitas algo especial?</p>
+            <h1 class="contacto_h1">Contáctanos</h1>
         </header>
 
-            <div class="cuadro_contacto">
+        <div class="cuadro_contacto">
 
             <form method="GET" action="respuesta_formulario.php">
                 <div>
@@ -91,6 +91,6 @@ margin-top: 0;
                 <button type="submit">Enviar</button>
             </form>
 
-            </div>
+        </div>
     </div>
 </main>

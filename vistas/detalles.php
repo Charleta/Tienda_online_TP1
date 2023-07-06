@@ -20,116 +20,139 @@ function filtrarPorId($productos, $id) {
 }
 $detalles = filtrarPorId($productos, $id);
 
-print_r($detalles)
+
 ?>
 
-<style>
+    <style>
 
 
-main{
-    margin-top: 100px;
-}
+        main{
+            margin-top: 100px;
+        }
 
-    .breadcumbs {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
+        .breadcumbs {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .contenedor_detalles{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+        .detalles {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background-color: #2E93FF;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: rgba(148, 181, 234, 0.56) 0px 22px 70px 4px;
+            color: #08192b;
 
-    .detalles {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+        }
 
-    .detalles img {
-        width: 300px;
-        height: auto;
-        margin-bottom: 20px;
-    }
+        .detalles img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 20px;
+        }
 
-    .detalles > div {
-        width: 100%;
-    }
+        .detalles div {
+            flex: 1;
+        }
 
-    .detalles h1 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
+        .detalles h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-    .detalles h2 {
-        font-size: 18px;
-        margin-bottom: 5px;
-    }
+        .detalles p {
+            margin-bottom: 5px;
+        }
 
-    .detalles p {
-        margin-bottom: 10px;
-    }
+        .detalles p span {
+            font-weight: bold;
+        }
 
-    .detalles ul {
-        list-style-type: none;
-        margin-bottom: 10px;
-    }
+        .detalles button {
+            padding: 10px 20px;
+            background-color: #08192b;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 2%;
+        }
 
-    .detalles ul li {
-        margin-bottom: 5px;
-    }
+        .detalles p,
+        .detalles ul {
+            font-size: 16px;
+        }
 
-    .detalles ul li span {
-        font-weight: bold;
-    }
+        .detalles h2 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
 
-    .detalles button {
-        width: 200px;
-        border-radius: 20px;
-        height: 35px;
-        background-color: #1e0707;
-        text-align: center;
-        font-size: 20px;
-        text-decoration: none;
-        color: white;
-        cursor: pointer;
-    }
+        .detalles ul {
+            margin-left: 20px;
+        }
 
-    .detalles button:hover {
-        background-color: #555;
-    }
+        @media screen and (max-width: 768px) {
+            .detalles {
+                flex-direction: column;
+            }
 
-</style>
+            .detalles img {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .detalles button {
+                width: 100%;
+            }
+        }
 
 
-<main>
-   <?php ;foreach ($detalles as $item) {
+    </style>
+
+
+    <main>
+<?php ;foreach ($detalles as $item) {
 
     ?>
     <p class="breadcumbs"><a href="index.php?seccion=home">Inicio</a> > <a href="index.php?seccion=product">Categoria</a> > <?= $item->getNombre() ?></p>
 
 
 
+    <div class="contenedor_detalles">
 
-    <div class="detalles">
-        <img src="<?= $item->getImagen() ?>" alt="Portada del libro <?= $item->getNombre() ?>">
-        <div>
+        <div class="detalles">
+            <img src="<?= $item->getImagen() ?>" alt="Portada del libro <?= $item->getNombre() ?>">
             <div>
-                <h1><?= $item->getNombre() ?></h1>
-                <p><span>Color:</span> <?= $item->getColor() ?></p>
-                <p>$<?= $item->getPrecioFormateado()?> </p>
-                <button>Agregar al carrito</button>
+                <div>
+                    <h1><?= $item->getNombre() ?></h1>
+                    <p><span>Color:</span> <?= $item->getColor() ?></p>
+                    <p>$<?= $item->getPrecioFormateado()?> </p>
+
+                </div>
+
+
+                <p><?= $item->getDescripcion() ?></p>
+
+                <h2>Garantia</h2>
+                <ul>
+                    <li> <?= $item->getGarantia() ?></li>
+                    <button>Agregar al carrito</button>
+                </ul>
+
             </div>
-
-
-            <p><?= $item->getDescripcion() ?></p>
-
-            <h2>Garantia</h2>
-            <ul>
-                <li> <?= $item->getGarantia() ?></li>
-
-            </ul>
-
         </div>
     </div>
 
-
-</main><?php
+    </main><?php
 }
 ?>

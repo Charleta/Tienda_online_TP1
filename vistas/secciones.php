@@ -46,7 +46,8 @@ function filtrarPorCategoria($productos, $categoria) {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 20px;
+        margin-bottom: 5%;
+        margin-top: 5%;
     }
     .breadcumbs {
         font-size: 14px;
@@ -66,10 +67,10 @@ function filtrarPorCategoria($productos, $categoria) {
 
     ul li a {
         text-decoration: none;
-        color: #2c0f0f;
+        color: white;
         font-weight: bold;
-        font-size: 20px;
-        ;
+        font-size: 218x;
+    ;
     }
     h2 {
         margin-left: 25px;
@@ -82,11 +83,11 @@ function filtrarPorCategoria($productos, $categoria) {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 20px;
-        height: 400px;
+        height: 450px;
         vertical-align: top;
         background-color: white;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-
+        box-shadow: rgba(148, 181, 234, 0.56) 0px 22px 70px 4px;
+        color: #0A2647;
     }
 
     .card img {
@@ -112,7 +113,7 @@ function filtrarPorCategoria($productos, $categoria) {
         text-align: center;
     }
     .contenedor_cards{
-    display: grid ;
+        display: grid ;
         grid-template-columns: repeat(4, 1fr); /* 4 columnas con ancho igual */
         grid-gap: 20px;
     }
@@ -132,16 +133,18 @@ function filtrarPorCategoria($productos, $categoria) {
         justify-content: center;
         display: flex;
 
+
     }
     .boton_detalles a {
         width: 200px;
         border-radius: 20px;
         height: 35px;
-        background-color: #1e0707;
+        background-color: #0A2647;
         text-align: center;
         font-size: 20px;
         text-decoration: none;
         color: white;
+        margin-top: 1%;
 
     }
 
@@ -149,44 +152,44 @@ function filtrarPorCategoria($productos, $categoria) {
 
 <main>
 
-<header>
+    <header>
 
-    <div class="contenedor_menu">
-    <p class="breadcumbs"><a href="index.php">Inicio</a> ><a href="index.php?seccion=product">productos</a> > secciones</p>
+        <div class="contenedor_menu">
+            <p class="breadcumbs"><a href="index.php">Inicio</a> ><a href="index.php?seccion=product">productos</a> > secciones</p>
 
-    <ul>
-        <li><a href="index.php?seccion=secciones&categoria=ram">Memoria Ram</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=microprocesador">| Microprocesador</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=discos">| Discos</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=motherboard">| Motherboard</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=monitor">| Monitor</a></li>
-        <li><a href="index.php?seccion=secciones&categoria=mouse">| Mouse</a></li>
-    </ul>
+            <ul>
+                <li><a href="index.php?seccion=secciones&categoria=ram">Memoria Ram</a></li>
+                <li><a href="index.php?seccion=secciones&categoria=microprocesador">| Microprocesador</a></li>
+                <li><a href="index.php?seccion=secciones&categoria=discos">| Discos</a></li>
+                <li><a href="index.php?seccion=secciones&categoria=motherboard">| Motherboard</a></li>
+                <li><a href="index.php?seccion=secciones&categoria=monitor">| Monitor</a></li>
+                <li><a href="index.php?seccion=secciones&categoria=mouse">| Mouse</a></li>
+            </ul>
 
-    </div>
+        </div>
 
-<header>
+        <header>
 
 
-    <div class="contenedor_cards">
-        <?php
+            <div class="contenedor_cards">
+                <?php
 
-        foreach ($categoria as $item) {
-            ?>
-            <div class="card">
-                <img src="<?php echo $item->getImagen(); ?>" alt="<?php echo $item->getNombre(); ?>">
-                <h2><?php echo $item->getNombre(); ?></h2>
-                <p><?php echo $item->getDescripcion();?></p>
-                <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px">$<?php echo $item->getPrecioFormateado(); ?></p>
-                <div class="boton_detalles">
-                    <a href="index.php?seccion=detalles&id=<?= $item->getId();?> ">Detalles</a>
-                </div>
+                foreach ($categoria as $item) {
+                    ?>
+                    <div class="card">
+                        <img src="<?php echo $item->getImagen(); ?>" alt="<?php echo $item->getNombre(); ?>">
+                        <h2><?php echo $item->getNombre(); ?></h2>
+                        <p><?php echo $item->getDescripcion();?></p>
+                        <p style="text-align: center;font-size: 25px;font-weight: bold;color: #007bff;padding: 5px">$<?php echo $item->getPrecioFormateado(); ?></p>
+                        <div class="boton_detalles">
+                            <a href="index.php?seccion=detalles&id=<?= $item->getId();?> ">Detalles</a>
+                        </div>
+                    </div>
+                    <?php
+                }?>
             </div>
-            <?php
-        }?>
-    </div>
 
-    </div>
+            </div>
 
 
 </main>

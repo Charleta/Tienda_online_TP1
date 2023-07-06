@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="well well-sm">
-                <form class="form-horizontal" action="actions/agregar_Producto_accion.php" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="actions/baja_producto_accion.php" method="POST" enctype="multipart/form-data">
                     <fieldset>
 
 

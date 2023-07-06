@@ -11,17 +11,20 @@ class Autenticacion
     public function logIn(string $username, string $password) {
         try{
             $miUser = (new Usuario());
-            $user = $miUser->getUserByUsername($email);
-            // $usuer = (new Usuario())->getUserByUsername($username);
+            $user = $miUser->getUserByUsername($username);
+            $usuer = (new Usuario())->getUserByUsername($username);
 
             if(!$user) return false;
             $loggedIn = ($user->getPassword() == $password);
             $_SESSION["loggedIn"] = $loggedIn;
             return $loggedIn;
 
+
         } catch (Exception $e){
             echo $e->getMessage();
+            return "tiro error";
         }
+        // return "lee el log in";
     }
 
     public function checklogin(){
